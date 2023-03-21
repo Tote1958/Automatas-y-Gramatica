@@ -9,6 +9,8 @@ def find_a_letter(string):
     for i in (string):
         if i in string:
             return True
+    else:
+        return False
 
 def char_length(str):
     length = len(str)
