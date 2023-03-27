@@ -25,5 +25,21 @@ def solve(string):
             result *= numbers[i+1]
     return result
 
+def split_op(string):
+    terms = string.split('+')
+    total = 0
+    print(terms)
+    resolved = []
+    for i in terms:
+        n = 0
+        terms[n] = str(solve(i))
+        n = n + 1
+        resolved.append(str(solve(i)))
+    for i in resolved: 
+        total = total + int(i)
+    return total
+
+
+
 operation = str(input('Ingrese una operación: '))
-print(solve(operation))
+print(split_op(operation))
