@@ -4,7 +4,6 @@ exp_slice = []
 for i in range(len(exp)):
     exp_slice.append(exp[i:(i+1)])
 
-print(exp_slice)
 
 error = False
 for i in range(len(exp_slice)):
@@ -16,4 +15,4 @@ for i in range(len(exp_slice)):
 if error == True:
     print("Error")
 elif error == False:
-    print("10 puntos")
+    print("La expresion es correcta.")
