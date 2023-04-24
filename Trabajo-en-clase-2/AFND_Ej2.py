@@ -37,6 +37,10 @@ def veryfier (string):
         elif status == 9:
             print('Cadena correcta.')
             break
+    if status == 9 or status == 5:
+        print('Cadena Correcta!!')
+    else:
+        print('Cadena incorrecta...')
 
 
 
