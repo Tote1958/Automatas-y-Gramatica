@@ -1,4 +1,5 @@
 def checker(line):
+    line = line.strip()
     checker = int(0)
     parts = line.split('.')
     if len(parts) == 4:
