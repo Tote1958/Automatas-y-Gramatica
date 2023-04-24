@@ -37,6 +37,7 @@ def validate_email(emails):
 
         is_email = True
         if re.fullmatch(name, email[0]):
+            print("pASO POR ACA")
             pass
         else:
             is_email = False
@@ -68,10 +69,12 @@ def validate_email(emails):
         elif emails_are_emails[i] == False:
             print(f'La cadena {emails[i]} es un email invalido')
 
-name = '([a-z])([0-9]|_|.|-)*'                                             # [a-z] no es de la a hasta la z, son todas las letras ASCII, por eso toma el #, ? etc.
+
+name = '([a-z])([a-z]|[A-Z]|[0-9]|_|\.|\-)*'                                             # [a-z] no es de la a hasta la z, son todas las letras ASCII, por eso toma el #, ? etc.
 dominios = '(clarin)|(hotmail)|(gmail)|(apple)|(outlook)'
 countries = '(es)|(ar)|(us)|(cl)|(co)'
 emails_are_emails = []
+
 
 emails = has_at(get_emails())
 #print(emails)
