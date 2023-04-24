@@ -3,9 +3,10 @@ def counter(text):
     text = text.translate(str.maketrans('', '', ''.join(chars)))
     words.append(text)
     word = words[-1].split(' ')
-    print(words)
-    print(word)
+    '''print(words)
+    print(word)'''
     for i in word:
+        i = i.lower()
         if not i in new_words:
             new_words.append(i)
             repetitions.append(1)
@@ -17,7 +18,7 @@ repetitions = []
 new_words = []
 max = 0
 #chars = '.,!"():1234567890'
-chars = ['.', ',', '!', '"', '\n', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '(', ')', ':', ';']
+chars = ['.', ',', '!', '"', '\n', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '(', ')', ':', ';', "'"]
 
 with open('Ej_d.txt', encoding='UTF-8') as file:
     line = file.readlines()
@@ -30,4 +31,4 @@ for i in repetitions:
         max_word = new_words[repetitions.index(i)]
 print(new_words)
 print(repetitions)
-print('Palabra más repetida: ', max_word, '. Se repitió ', max, ' veces.')
+print('Palabra más repetida: ', max_word, ' Se repitió ', max, ' veces.')
