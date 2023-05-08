@@ -19,25 +19,22 @@ def has_at(list_of_emails):
         if re.search(at, i):
             emails.append(i)
         else:
-            print(f'La cadena {i} no contiene @ por lo tanto no puede ser un email valido')
+            print(f'La cadena {i} no contiene @, por lo tanto no puede ser un email valido')
     return emails
 
 
 def validate_email(emails):
     for i in emails:
-        n = 0                                                                   #Estoy encarando bien este ej en general?                                                           # O habria que hacerlo con automatas y los diagramas?
-        email = i.split("@")                                                    #Podria usar re.compile
+        n = 0                                                                                                                             
+        email = i.split("@")                                                    
         dom = email[(n + 1)].split(".")
         for index in range(3):
             email.append(dom[index])
         email.pop(n + 1)
         n += 1
 
-        print(email)
-
         is_email = True
         if re.fullmatch(name, email[0]):
-            print("pASO POR ACA")
             pass
         else:
             is_email = False
@@ -61,7 +58,7 @@ def validate_email(emails):
         else:
             emails_are_emails.append(False)
 
-    #print(emails_are_emails) 
+     
 
     for i in range(len(emails)):
         if emails_are_emails[i] == True:
@@ -70,12 +67,11 @@ def validate_email(emails):
             print(f'La cadena {emails[i]} es un email invalido')
 
 
-name = '([a-z])([a-z]|[A-Z]|[0-9]|_|\.|\-)*'                                             # [a-z] no es de la a hasta la z, son todas las letras ASCII, por eso toma el #, ? etc.
+name = '([a-z])([a-z]|[A-Z]|[0-9]|_|\.|\-)*'                                             
 dominios = '(clarin)|(hotmail)|(gmail)|(apple)|(outlook)'
 countries = '(es)|(ar)|(us)|(cl)|(co)'
 emails_are_emails = []
 
 
 emails = has_at(get_emails())
-#print(emails)
 validate_email(emails)

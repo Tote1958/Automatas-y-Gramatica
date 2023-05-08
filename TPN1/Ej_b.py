@@ -19,7 +19,7 @@ def get_links():
 
 links = get_links()
 print(links)
-web = f'((http|https)(://))?(www\.)?([a-z]|[A-Z]|[0-9]|\.)+(\.com)((/|(\?)|([a-z]|[A-Z]|[0-9])+)*|(/\?([a-z])+=([a-z]|[0-9])+&([a-z])+=([a-z]|[0-9])+)?)?'     
+web = f'((http|https)(://))?(www\.)?([a-z]|[A-Z]|[0-9]|\.)+(\.com)((/|(\?)|([a-z]|[A-Z]|[0-9])+)*|(/\?([a-z]|[A-Z])+=([a-z]|[A-Z]|[0-9])+&([a-z]|[A-Z])+=([a-z]|[A-Z]|[0-9])+)?)?'     
 n = 0  
 for i in links:
     is_link = re.fullmatch(web, i)
