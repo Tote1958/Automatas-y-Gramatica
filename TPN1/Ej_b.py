@@ -4,7 +4,6 @@ import re
 def get_links():
     with open("/home/tote/Automatas-y-Gramatica/TPN1/Ej_b.txt","r") as f:
         links_list = f.readlines()
-        
     links = []
     ind = 0
     for i in links_list:
@@ -12,7 +11,7 @@ def get_links():
         char = split[0]
         links.append(char)
         ind = ind + 1
-    links.pop(ind - 1)
+    
     return links
 
 
@@ -20,9 +19,8 @@ def get_links():
 
 links = get_links()
 print(links)
-web = '(http|https)?(://)?(www\.)([a-z]|[A-Z]|[0-9])*(\.)(com)(/)*'
-
-n = 0
+web = f'((http|https)(://))?(www\.)?([a-z]|[A-Z]|[0-9]|\.)+(\.com)((/|(\?)|([a-z]|[A-Z]|[0-9])+)*|(/\?([a-z])+=([a-z]|[0-9])+&([a-z])+=([a-z]|[0-9])+)?)?'     
+n = 0  
 for i in links:
     is_link = re.fullmatch(web, i)
     if is_link:
