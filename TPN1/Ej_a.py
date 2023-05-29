@@ -23,55 +23,11 @@ def has_at(list_of_emails):
     return emails
 
 
-def validate_email(emails):
-    for i in emails:
-        n = 0                                                                                                                             
-        email = i.split("@")                                                    
-        dom = email[(n + 1)].split(".")
-        for index in range(3):
-            email.append(dom[index])
-        email.pop(n + 1)
-        n += 1
-
-        is_email = True
-        if re.fullmatch(name, email[0]):
-            pass
-        else:
-            is_email = False
-        if re.fullmatch(dominios, email[1]):
-            pass
-        else:
-            is_email = False
-
-        if re.fullmatch('com', email[2]):
-            pass
-        else:
-            is_email = False
-            
-        if re.fullmatch(countries, email[3]):
-            pass
-        else:
-            is_email = False
-            
-        if is_email == True:
-            emails_are_emails.append(True)
-        else:
-            emails_are_emails.append(False)
-
-     
-
-    for i in range(len(emails)):
-        if emails_are_emails[i] == True:
-            print(f'La cadena {emails[i]} es un email valido')
-        elif emails_are_emails[i] == False:
-            print(f'La cadena {emails[i]} es un email invalido')
-
-
-name = '([a-z])([a-z]|[A-Z]|[0-9]|_|\.|\-)*'                                             
-dominios = '(clarin)|(hotmail)|(gmail)|(apple)|(outlook)'
-countries = '(es)|(ar)|(us)|(cl)|(co)'
-emails_are_emails = []
-
+validate = r'([a-z])([a-zA-Z0-9]|_|\.|\-)*@(clarin|hotmail|gmail|apple|outlook)\.com(\.(es|ar|us|cl|co))?'
 
 emails = has_at(get_emails())
-validate_email(emails)
+for i in emails:
+    if re.fullmatch(validate, i):
+        print(f'{i} es un email')
+    else:
+        print(f'{i} no es un email')

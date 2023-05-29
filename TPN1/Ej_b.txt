@@ -2,3 +2,7 @@ httpswww.youtube.com/video/index/1
 ://www.google.com
 https://github.com/
 store.steampowered.com/?clave=valor&clave=valor
+https://virtual.um.edu.ar/index.html
+://google.com
+https://google..com
+https://https://google.com
